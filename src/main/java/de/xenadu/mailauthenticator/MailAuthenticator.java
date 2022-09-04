@@ -9,22 +9,22 @@ import org.keycloak.models.UserModel;
 public class MailAuthenticator implements Authenticator {
     @Override
     public void authenticate(AuthenticationFlowContext context) {
-
+        System.out.println("authenticate() executed");
     }
 
     @Override
     public void action(AuthenticationFlowContext context) {
-
+        System.out.println("action() executed");
     }
 
     @Override
     public boolean requiresUser() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean configuredFor(KeycloakSession session, RealmModel realm, UserModel user) {
-        return false;
+        return user.getEmail() != null;
     }
 
     @Override

@@ -37,7 +37,7 @@ public class MailAuthenticatorFactory implements AuthenticatorFactory {
 
     @Override
     public boolean isUserSetupAllowed() {
-        return false;
+        return true;
     }
 
     @Override
