@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'de.xenadu'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.keycloak', name: 'keycloak-core', version: '19.0.0'
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi', version: '19.0.0'
+    // https://mvnrepository.com/artifact/org.keycloak/keycloak-server-spi-private
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi-private', version: '19.0.0'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+}
